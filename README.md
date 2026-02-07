@@ -1,2 +1,1 @@
-# ccna-portfolio
-CCNA-Level Portfolio
+# CCNA Portfolio
