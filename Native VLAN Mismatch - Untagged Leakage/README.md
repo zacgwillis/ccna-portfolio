@@ -32,7 +32,8 @@ CDP Syslog Warning Message
 `*Feb  8 00:03:30.353: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on Ethernet0/1 (20), with SW1 Ethernet0/0 (10).`  
 
 `show mac address-table [dynamic]`  
-![show mac address-table [dynamic output]](./screenshots/show%20mac%20address-table%20dynamic%20output.png)
+![show mac address-table [dynamic output]](./screenshots/show%20mac%20address-table%20dynamic%20output.png)  
+*PC1's MAC unexpectedly learned in VLAN 20 on SW2 via trunk port*
 
 To verify a trunks native VLAN:  
 `show interfaces [e0/1] switchport`  
