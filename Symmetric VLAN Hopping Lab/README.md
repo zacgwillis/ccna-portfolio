@@ -22,22 +22,20 @@ From PC1, ping any nonexistent IP inside its own subnet - this will trigger an A
 
 SW2 receives this untagged frame, assumes the frame is meant for its own configured native VLAN (VLAN 20 in this case) and will forward that frame into VLAN 20 (VLAN Hopping). This also works in reverse by intitiating a ping from PC2
 
-### Evidence of Leakage
+## Evidence of Leakage
 
-#### VLAN Hopping / ARP Broadcast Leak into VLAN 20  
+#### VLAN 10 ARP Broadcast "Hopping" into VLAN 20  
 ![VLAN Hopping / ARP Broadcast Leak into VLAN 20](./screenshots/SW2-PC2%20link%20VLAN%20leakage.png)
 
-## Verification & Evidence
+## Verification
 CDP Syslog Warning Message  
-`SW2#
-*Feb  8 00:03:30.353: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on Ethernet0/1 (20), with SW1 Ethernet0/0 (10).`  
+`*Feb  8 00:03:30.353: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on Ethernet0/1 (20), with SW1 Ethernet0/0 (10).`  
 
 `show mac address-table [dynamic]`  
 ![show mac address-table [dynamic output]](./screenshots/show%20mac%20address-table%20dynamic%20output.png)    
 
 To verify a trunks native VLAN:  
 `show interfaces [e0/1] switchport`  
-
 `show interfaces trunk`
 
 ## Mitigation / Best Practices
