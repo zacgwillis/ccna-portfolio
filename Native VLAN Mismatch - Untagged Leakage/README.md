@@ -10,8 +10,8 @@ Generate ARP broadcasts into undesired VLANs due to a native VLAN trunk mismatch
 * Assign appropriate IP addresses for end-users in their respective VLAN
 * Create VLANs 10 & 20 on both switches w/ their respective names
 * Configure appropriate access ports for both SW1 & SW2, then configure a dot1q trunk between them  
-[SW1 Config](./config/SW1-config.txt)  
-[SW2 Config](./config/SW2-config.txt)
+[SW1 Config](./configs/SW1-config.txt)  
+[SW2 Config](./configs/SW2-config.txt)
 
 ## Misconfiguration Introduced
 * On SW1, configure the native VLAN as VLAN 10
