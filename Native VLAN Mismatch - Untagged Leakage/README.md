@@ -1,7 +1,7 @@
 # Native VLAN Mismatch / Untagged Leakage
 
 ## Objective
-Generate ARP broadcasts into undesired VLANs due to a native VLAN trunk mismatch
+Generate ARP broadcasts into undesired VLANs due to a trunks native VLAN mismatch
 
 ## Topology
 ![GNS3 Topology](./screenshots/VLAN%20Hopping%20Lab.png)
