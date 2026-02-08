@@ -1,4 +1,4 @@
-# Symmetric VLAN Hopping Lab
+# Native VLAN Mismatch / Untagged Leakage
 
 ## Objective
 Generate ARP broadcasts into undesired VLANs due to a native VLAN trunk mismatch
