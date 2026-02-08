@@ -1,4 +1,5 @@
 # Native VLAN Mismatch / Untagged Leakage
+This lab demonstrates a common trunk misconfiguration vulnerability that allows untagged traffic to leak between VLANs
 
 ## Objective
 Generate ARP broadcasts into undesired VLANs due to a trunks native VLAN mismatch
