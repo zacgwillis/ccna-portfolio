@@ -25,7 +25,7 @@ topology.png
 `SW1(config-if-range)# switchport port-security mac-address sticky`  
 `SW1(config-if-range)# switchport port-security maximum 1`  
 
-* Alternative: Statically assign each switchport to their respective PC  
+* Alternative to dynamic/sticky: Statically assign each switchport to their respective PC  
 `SW1(config-if)# switchport port-security mac-address 0050.7966.6800`
 
 
