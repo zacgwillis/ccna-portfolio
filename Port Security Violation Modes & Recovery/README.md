@@ -32,16 +32,26 @@ topology.png
 * Optional: Configure e0/1 for shutdown[default] violation mode [PC1]  
 `SW1(config-if)# switchport port-security violation shutdown`
 
-* Configure e0/2 for restrict violation mode [PC2]  
-`SW1(config-if)# switchport port-security violation restrict`
-
-* Configure e0/3 for protect violation mode [PC3]  
+* Configure e0/2 for protect violation mode [PC2]  
 `SW1(config-if)# switchport port-security violation protect`
 
+* Configure e0/3 for restrict violation mode [PC3]  
+`SW1(config-if)# switchport port-security violation restrict`
 
-* Enable err-disable state recovery for 30sec intervals  
+
+* Enable automatic err-disable state recovery for 30sec intervals  
 `SW1(config)# errdisable recovery cause psecure-violation`  
 `SW1(config)# errdisable recovery interval 30`
+
+
+SW1-config.txt link to related config
+
+## Procedure
+1. From one PC, ping the other two to populate SW1s MAC table (confirms sticky learning)
+
+2. Disconnect & swap cables from each PC (ex: move PC2 cable to e0/1, etc.) to introduce unknown MACs
+
+3. Attempt pings from each PC & observe results per violation mode
 
 
 ## Verification
