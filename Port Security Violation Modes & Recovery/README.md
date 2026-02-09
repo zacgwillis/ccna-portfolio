@@ -19,29 +19,39 @@ topology.png
 
 
 ## Initial Setup
-* Enable port-security for interface range e0/1 - 3, learn MAC addresses dynamically, and set maximum MAC to 1
+* Enable port-security for interface range e0/1 - 3, learn MAC addresses dynamically, and set maximum MAC to 1  
 `SW1(config)# interface range e0/1 - 3`  
 `SW1(config-if-range)# switchport port-security`  
 `SW1(config-if-range)# switchport port-security mac-address sticky`  
 `SW1(config-if-range)# switchport port-security maximum 1`  
 
-* Alternative: Statically assign each switchport to their respective PC  
+* Alternative to dynamic/sticky: Statically assign each switchport to their respective PC  
 `SW1(config-if)# switchport port-security mac-address 0050.7966.6800`
 
 
 * Optional: Configure e0/1 for shutdown[default] violation mode [PC1]  
 `SW1(config-if)# switchport port-security violation shutdown`
 
-* Configure e0/2 for restrict violation mode [PC2]  
-`SW1(config-if)# switchport port-security violation restrict`
-
-* Configure e0/3 for protect violation mode [PC3]  
+* Configure e0/2 for protect violation mode [PC2]  
 `SW1(config-if)# switchport port-security violation protect`
 
+* Configure e0/3 for restrict violation mode [PC3]  
+`SW1(config-if)# switchport port-security violation restrict`
 
-* Enable err-disable state recovery for 30sec intervals  
-`SW1(config)# errdisable recovery cause psecure-violation`
+
+* Enable automatic err-disable state recovery for 30sec intervals  
+`SW1(config)# errdisable recovery cause psecure-violation`  
 `SW1(config)# errdisable recovery interval 30`
+
+
+SW1-config.txt link to related config
+
+## Procedure
+1. From one PC, ping the other two to populate SW1s MAC table (confirms sticky learning)
+
+2. Disconnect & swap cables from each PC (ex: move PC2 cable to e0/1, etc.) to introduce unknown MACs
+
+3. Attempt pings from each PC & observe results per violation mode
 
 
 ## Verification
