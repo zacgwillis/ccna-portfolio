@@ -1,5 +1,5 @@
 # Port Security Violation Modes (Protect, Restrict, Shutdown) & Errdisable Auto-Recovery
-This lab demonstrates Layer 2 port hardening by configuring & contrasting the three violating actions, then automating recovery from shutdown events
+This lab demonstrates Layer 2 port hardening by configuring & contrasting the three violation actions, then automating recovery from shutdown events
 
 ## Objective
 * Configure & describe the three different port-security violation modes
