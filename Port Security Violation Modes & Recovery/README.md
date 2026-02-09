@@ -19,7 +19,7 @@ topology.png
 
 
 ## Initial Setup
-* Enable port-security for interface range e0/1 - 3, learn MAC addresses dynamically, and set maximum MAC to 1
+* Enable port-security for interface range e0/1 - 3, learn MAC addresses dynamically, and set maximum MAC to 1  
 `SW1(config)# interface range e0/1 - 3`  
 `SW1(config-if-range)# switchport port-security`  
 `SW1(config-if-range)# switchport port-security mac-address sticky`  
@@ -40,7 +40,7 @@ topology.png
 
 
 * Enable err-disable state recovery for 30sec intervals  
-`SW1(config)# errdisable recovery cause psecure-violation`
+`SW1(config)# errdisable recovery cause psecure-violation`  
 `SW1(config)# errdisable recovery interval 30`
 
 
