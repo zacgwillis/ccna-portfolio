@@ -80,9 +80,7 @@ If the unauthorized device remains connected, the port will err-disable again up
 
 ## Notes
 
-Static secure MACs appear in `show mac address-table secure`; dynamic/sticky MACs appear in `show mac address-table [dynamic]` (and sticky in running-config), but not in the secure table  
-
-Sticky MACs are not saved if not written to config. When a port-security interface dynamically learns a MAC using the sticky keyword, it is stored in running-config  
+Static secure MACs appear in `show mac address-table secure`; dynamic/sticky MACs appear in `show mac address-table [dynamic]` (and sticky in running-config), but not in the secure table; sticky MACs are not saved if not written to config  
 
 In production, typically use `switchport port-security maximum 2` for phone + PC scenarios, and/or aging timers
 
