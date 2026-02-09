@@ -9,7 +9,7 @@ This lab demonstrates Layer 2 port hardening by configuring & contrasting the th
 
 
 ## Topology
-topology.png
+![topology.png](./images/topology.png)
 
 
 ## Port Security Violation Modes Overview
@@ -19,7 +19,7 @@ topology.png
 
 
 ## Initial Setup
-* Enable port-security for interface range e0/1 - 3, learn MAC addresses dynamically, and set maximum MAC to 1  
+* Enable port-security for interface range e0/1 - 3, learn MAC addresses dynamically, and set maximum MAC to 1[default]  
 `SW1(config)# interface range e0/1 - 3`  
 `SW1(config-if-range)# switchport port-security`  
 `SW1(config-if-range)# switchport port-security mac-address sticky`  
@@ -44,7 +44,7 @@ topology.png
 `SW1(config)# errdisable recovery interval 30`
 
 
-SW1-config.txt link to related config
+[SW1 config](./configs/SW1-config.txt)
 
 ## Procedure
 1. From one PC, ping the other two to populate SW1s MAC table (confirms sticky learning)
@@ -57,18 +57,17 @@ SW1-config.txt link to related config
 ## Verification
 
 ### Before violation:
-before violation.png
-
-show errdisable recovery.png
+![before violation](./images/before%20violation1.png)
 
 
 ### After violation:
+**Shutdown Violation**  
+![after a shutdown violation w/ automatic recovery](./images/after-shutdown-violation.png)
 
-after a shutdown violation w/ automatic recovery.png
+**Restrict Violation**  
+![after a restrict violation](./images/after-restrict-violation.png)  
 
-after a restrict violation on e0/3.png  
-
-Protect violations will have no change in counters/logs, but pings will fail to/from unauthorized MAC
+* Protect violations will have no change in counters/logs, but pings will fail to/from unauthorized MAC
 
 
 ## Troubleshooting & Recovery
