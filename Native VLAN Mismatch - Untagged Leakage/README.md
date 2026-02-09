@@ -5,7 +5,7 @@ This lab demonstrates a common trunk misconfiguration vulnerability that allows 
 Generate ARP broadcasts into undesired VLANs due to a trunks native VLAN mismatch
 
 ## Topology
-![GNS3 Topology](./screenshots/VLAN%20Hopping%20Lab.png)
+![GNS3 Topology](./images/VLAN%20Hopping%20Lab.png)
 
 ## Initial Setup / Baseline
 * Assign appropriate IP addresses for end-users in their respective VLAN
@@ -26,14 +26,14 @@ SW2 receives this untagged frame, assumes the frame is meant for its own configu
 ## Evidence of Leakage
 
 #### VLAN 10 ARP Broadcast "Hopping" into VLAN 20  
-![VLAN Hopping / ARP Broadcast Leak into VLAN 20](./screenshots/SW2-PC2%20link%20VLAN%20leakage.png)
+![VLAN Hopping / ARP Broadcast Leak into VLAN 20](./images/SW2-PC2%20link%20VLAN%20leakage.png)
 
 ## Verification
 CDP Syslog Warning Message  
 `*Feb  8 00:03:30.353: %CDP-4-NATIVE_VLAN_MISMATCH: Native VLAN mismatch discovered on Ethernet0/1 (20), with SW1 Ethernet0/0 (10).`  
 
 `show mac address-table [dynamic]`  
-![show mac address-table [dynamic output]](./screenshots/show%20mac%20address-table%20dynamic%20output.png)  
+![show mac address-table [dynamic output]](./images/show%20mac%20address-table%20dynamic%20output.png)  
 *PC1's MAC unexpectedly learned in VLAN 20 on SW2 via trunk port*
 
 To verify a trunks native VLAN:  
