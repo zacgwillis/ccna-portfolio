@@ -7,17 +7,23 @@ errdisable recovery interval 30
 interface Ethernet0/1
  switchport mode access
  switchport port-security
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 0050.7966.6800
  duplex auto
 !
 interface Ethernet0/2
  switchport mode access
  switchport port-security
  switchport port-security violation protect
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 0050.7966.6801
  duplex auto
 !
 interface Ethernet0/3
  switchport mode access
  switchport port-security
  switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ switchport port-security mac-address sticky 0050.7966.6802
  duplex auto
 !
