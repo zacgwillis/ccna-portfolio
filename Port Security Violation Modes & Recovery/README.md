@@ -75,12 +75,12 @@ To manually recover err-disabled ports, use `shut / no shut` on the err-disabled
 
 To recovery automatically, wait 30 seconds
 
-If the unauthorized device remains connected, the port will err-disable again upon the next violation frame. For successful re-ping, reconnect the original authorized MAC (or clear/relearn sticky if needed)
+If the unauthorized device remains connected, the port will continue to drop packets or err-disable upon the next violation frame. For successful re-ping, reconnect the original authorized MAC (or clear/relearn sticky if needed)
 
 
 ## Notes
 
-Static secure MACs appear in `show mac address-table secure`; dynamic/sticky MACs appear in `show mac address-table [dynamic]` (and sticky in running-config), but not in the secure table; sticky MACs are not saved if not written to config  
+Sticky learned MACs appear in `show mac address-table {static | secure}`, & are stored in running-config  
 
 In production, typically use `switchport port-security maximum 2` for phone + PC scenarios, and/or aging timers
 
