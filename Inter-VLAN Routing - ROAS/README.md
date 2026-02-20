@@ -7,14 +7,14 @@ Implement & verify traffic flow between VLANs across a single trunk link, utliiz
 ![Inter-VLAN Routing Topology.png](./images/topology.png)
 
 ## Key Concepts / Overview
-Since VLANs isolate themselves into separate L2 broadcast domains, they require routing from a L3 device in order to communicate w/ each other. A trunk configured on the R1-SW1 link permits traffic from multiple VLANs. Inter-VLAN routing requires sub-interfaces w/ VLAN-specific IPs to be configured on R1 for each VLAN  
+Since VLANs isolate themselves into separate L2 broadcast domains, they require routing from a L3 device in order to communicate w/ each other. A trunk configured on the R1-SW1 link permits traffic from multiple VLANs. ROAS routing requires sub-interfaces w/ VLAN-specific IPs to be configured on R1 for each VLAN  
 
 Sub-interfaces are logical divisions created on a single physical interface. They are dependent on the physical interface for their operational state
 
 ## Configuration Breakdown
 **SW1**  
 * Create VLANs 10 & 20
-* Assign access ports ot the appropriate VLANs
+* Assign access ports to the appropriate VLANs
 * Configure the port connected to R1 as a dot1q trunk  
 
 [SW1 Config](./configs/SW1_Config.txt)
