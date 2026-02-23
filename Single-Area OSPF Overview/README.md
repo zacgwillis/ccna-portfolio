@@ -73,7 +73,7 @@ The misconfigurations below will result in neighbors being formed, but routes no
 
 **Network Type Mismatch**  
 `R4(config-if)# ip ospf network point-to-point`  
-(ex: broadcast > point-to-point) Neighbors may form & reach a FULL state, but DR/BDR election fails or LSAs aren't properly advertised. SPF can't calculate routes correctly, resulting in missing or incomplete routes in the routing table. Check that Network Types match on both ends of the link  
+(ex: broadcast > point-to-point) Neighbors may form & reach a FULL state, but DR/BDR election fails or LSAs aren't properly advertised. SPF can't calculate routes correctly, resulting in missing or incomplete routes in the routing table. Check that Network Types match on both ends 
 
 **MTU Mismatch**  
 `R4(config-if)# ip mtu 1400`  
@@ -81,7 +81,7 @@ Fails to complete LSDB exchange. Continually reaches EXSTART then DOWN. Verify w
 
 **OSPF Zero Priority**  
 `R4(config-if)# ip ospf priority 0`  
-OSPF priority value 0 refuses DR/BDR role; results in 2WAY/DROTHER state
+OSPF priority value 0 refuses DR/BDR role; results in 2WAY/DROTHER state (assuming priority 0 on both ends)
 
 ### Cases where no neighbor relationships form at all
 These prevent any adjacency
