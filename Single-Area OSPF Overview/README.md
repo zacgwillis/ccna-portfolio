@@ -26,7 +26,7 @@ With broadcast network types, OSPF elects one Designated Router (DR) & one Backu
 Begin by assigning appropriate IP addresses for each interface/link, bring the interface up, & test basic connectivity
 
 ## Procedure
-You can either configure OSPF w/ the traditional method using **network** commands, or the modern way w/ inteface config, which uses per-interface commands to specify which OSPF process ID & area to use
+You can either configure OSPF w/ the traditional method using **network** commands, or the modern way w/ interface config, which uses per-interface commands to specify which OSPF process ID & area to use
 
 ### Traditional Method:
 OSPF/Router Config, using **network** commands  
