@@ -1,7 +1,7 @@
 # Inter-VLAN Routing / Router-on-a-Stick
 
 ## Objective
-Implement & verify traffic flow between VLANs across a single trunk link, utliizing ROAS for inter-VLAN routing
+Implement & verify traffic flow between VLANs across a single trunk link, utilizing ROAS for inter-VLAN routing
 
 ## Topology
 ![Inter-VLAN Routing Topology.png](./images/topology.png)
